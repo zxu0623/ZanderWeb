@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { Mail, Github, Linkedin, Twitter, MapPin, Phone, Send, MessageSquare } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, Phone, Send, MessageSquare } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -49,21 +49,14 @@ export default function Contact() {
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/username",
+      href: "https://www.linkedin.com/in/zander-xinhe-xu-96a1ab174/",
       icon: Linkedin,
       description: "Let&apos;s connect professionally",
       color: "hover:text-blue-600"
     },
     {
-      name: "Twitter",
-      href: "https://twitter.com/username",
-      icon: Twitter,
-      description: "Follow me for tech insights",
-      color: "hover:text-blue-400"
-    },
-    {
       name: "Email",
-      href: "mailto:hello@zanderdev.com",
+      href: "mailto:zanderxu.uiuc2023@gmail.com",
       icon: Mail,
       description: "Send me a direct message",
       color: "hover:text-red-500"
@@ -74,14 +67,14 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@zanderdev.com",
-      href: "mailto:hello@zanderdev.com"
+      value: "zanderxu.uiuc2023@gmail.com",
+      href: "mailto:zanderxu.uiuc2023@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+1 (217) 417-5065",
+      href: "tel:+12174175065"
     },
     {
       icon: MapPin,

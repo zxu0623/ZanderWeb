@@ -8,58 +8,60 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-background via-background to-muted/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8">
-            {/* Greeting */}
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span className="text-muted-foreground">Hi, I&apos;m </span>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-8">
+                          {/* Main Heading */}
+            <div className="space-y-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight">
+                <span className="text-foreground">Hi, I&apos;m </span>
                 <span className="bg-gradient-to-r from-primary via-primary to-muted-foreground bg-clip-text text-transparent">
                   Zander
                 </span>
               </h1>
               
-              <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto">
-                Full Stack Developer
-              </p>
-              
-              <p className="text-lg sm:text-xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
-                I build modern web applications with a focus on performance, 
-                user experience, and scalable architecture. Passionate about creating 
-                digital solutions that make a difference.
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                Software Engineer by Day, Bug Exterminator by Night
+              </h2>
+            </div>
+            
+            {/* Subtitle */}
+            <div className="space-y-6 max-w-4xl mx-auto">
+              <p className="text-lg sm:text-xl text-muted-foreground/90 leading-relaxed">
+                I build things that run fast, don&apos;t crash (usually), and actually help users.
+                Sometimes it&apos;s a simple tool, sometimes it&apos;s just a really clever button.
               </p>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/projects"
-                className="group px-8 py-4 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-              >
-                View My Work
-              </Link>
-              
-              <Link
-                href="/contact"
-                className="px-8 py-4 border border-border text-foreground rounded-lg font-medium hover:bg-accent transition-all duration-200"
-              >
-                Get In Touch
-              </Link>
-            </div>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  href="/projects"
+                  className="group px-8 py-4 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  View My Work
+                </Link>
+                
+                <Link
+                  href="/contact"
+                  className="px-8 py-4 border border-border text-foreground rounded-lg font-medium hover:bg-accent transition-all duration-200"
+                >
+                  Get In Touch
+                </Link>
+              </div>
 
-            {/* Social Links */}
-            <div className="flex justify-center space-x-6 pt-8">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 text-muted-foreground hover:text-primary hover:bg-accent rounded-lg transition-all duration-200"
-                aria-label="GitHub"
-              >
-                <Github size={24} />
-              </a>
-              <a
-                href="https://linkedin.com"
+              {/* Social Links */}
+              <div className="flex justify-center space-x-6 pt-4">
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 text-muted-foreground hover:text-primary hover:bg-accent rounded-lg transition-all duration-200"
+                  aria-label="GitHub"
+                >
+                  <Github size={24} />
+                </a>
+                              <a
+                href="https://www.linkedin.com/in/zander-xinhe-xu-96a1ab174/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 text-muted-foreground hover:text-primary hover:bg-accent rounded-lg transition-all duration-200"
@@ -67,15 +69,15 @@ export default function Home() {
               >
                 <Linkedin size={24} />
               </a>
-              <a
-                href="mailto:your.email@example.com"
+                              <a
+                href="mailto:zanderxu.uiuc2023@gmail.com"
                 className="p-3 text-muted-foreground hover:text-primary hover:bg-accent rounded-lg transition-all duration-200"
                 aria-label="Email"
               >
                 <Mail size={24} />
               </a>
+              </div>
             </div>
-          </div>
         </div>
 
         {/* Scroll indicator */}
