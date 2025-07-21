@@ -6,13 +6,18 @@ import { useTheme } from "next-themes"
 import { Moon, Sun, Menu, X } from "lucide-react"
 import { useState, useEffect } from "react"
 
-const navItems = [
+// TODO: Set showProjects to true when projects section is ready
+const showProjects = false;
+
+const allNavItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Experience", href: "/experience" },
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
-]
+];
+
+const navItems = allNavItems.filter(item => showProjects || item.name !== "Projects");
 
 export function Navigation() {
   const pathname = usePathname()

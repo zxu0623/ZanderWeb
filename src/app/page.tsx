@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
+// TODO: Set showProjects to true when projects section is ready
+const showProjects = false;
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -35,10 +38,10 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
-                  href="/projects"
+                  href="/experience"
                   className="group px-8 py-4 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
-                  View My Work
+                  View My Experience
                 </Link>
                 
                 <Link
@@ -47,14 +50,6 @@ export default function Home() {
                 >
                   Get In Touch
                 </Link>
-                
-                <a
-                  href="/ZanderXu_resume_sde.pdf"
-                  download="ZanderXu_Resume_SDE.pdf"
-                  className="px-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/80 transition-all duration-200"
-                >
-                  View My Resume
-                </a>
               </div>
 
               {/* Social Links */}
@@ -113,10 +108,10 @@ export default function Home() {
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              I&apos;m a passionate full-stack developer with expertise in modern web technologies. 
-              I love solving complex problems and building applications that provide exceptional 
-              user experiences. When I&apos;m not coding, you can find me exploring new technologies, 
-              contributing to open source projects, or sharing knowledge with the developer community.
+              I&apos;m a software engineer passionate about building systems that blend infrastructure, 
+              intelligence, and interface. From optimizing Kafka pipelines processing billions of events 
+              to embedding LLMs into financial systems, I work across the full stack to make software 
+              smarter, faster, and more impactful.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
@@ -132,21 +127,21 @@ export default function Home() {
               
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-primary">50+</span>
+                  <span className="text-2xl font-bold text-primary">1B+</span>
                 </div>
-                <h3 className="font-semibold text-foreground">Projects Completed</h3>
+                <h3 className="font-semibold text-foreground">Events Processed Daily</h3>
                 <p className="text-sm text-muted-foreground">
-                  From small websites to enterprise applications
+                  Building scalable systems that handle massive data
                 </p>
               </div>
               
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-primary">10+</span>
+                  <span className="text-2xl font-bold text-primary">20+</span>
                 </div>
                 <h3 className="font-semibold text-foreground">Technologies</h3>
                 <p className="text-sm text-muted-foreground">
-                  Proficient in modern web development stack
+                  From ML frameworks to web development tools
                 </p>
               </div>
             </div>
@@ -164,51 +159,53 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Preview */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-              Featured Projects
-            </h2>
-            
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Here are some of my recent projects that showcase my skills and passion for development.
-            </p>
+      {showProjects && (
+        <section className="py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center space-y-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+                Featured Projects
+              </h2>
+              
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Here are some of my recent projects that showcase my skills and passion for development.
+              </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-200">
-                  <div className="aspect-video bg-muted flex items-center justify-center">
-                    <span className="text-muted-foreground">Project Image</span>
-                  </div>
-                  <div className="p-6 space-y-4">
-                    <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                      Project {i}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      A brief description of this amazing project and the technologies used to build it.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">React</span>
-                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">Next.js</span>
-                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">TypeScript</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-200">
+                    <div className="aspect-video bg-muted flex items-center justify-center">
+                      <span className="text-muted-foreground">Project Image</span>
+                    </div>
+                    <div className="p-6 space-y-4">
+                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                        Project {i}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        A brief description of this amazing project and the technologies used to build it.
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">React</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">Next.js</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">TypeScript</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <div className="pt-8">
-              <Link
-                href="/projects"
-                className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-200"
-              >
-                View All Projects
-              </Link>
+              <div className="pt-8">
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-200"
+                >
+                  View All Projects
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 }
