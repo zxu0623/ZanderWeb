@@ -67,7 +67,7 @@ export default function About() {
             <h2 className="text-2xl font-semibold text-foreground mb-6">My Journey</h2>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
               <p>
-                My journey into tech started with a healthy curiosity for "how the internet works" and snowballed into a career that blends infrastructure, intelligence, and interface.
+                My journey into tech started with a healthy curiosity for &ldquo;how the internet works&rdquo; and snowballed into a career that blends infrastructure, intelligence, and interface.
               </p>
               <p>
                 From optimizing Kafka pipelines that process over a billion events a day to embedding LLMs into financial systems, I&apos;ve worked across backend, frontend, and ML to make software smarter, faster, and occasionally even fun to use.
@@ -79,7 +79,7 @@ export default function About() {
                 A huge part of my growth happened at the University of Illinois Urbana-Champaign, where I had the chance to explore machine learning research under the guidance of amazing professors. I&apos;m especially grateful for the mentorship of Professor Tarek Abdelzaher and his research group, where I was encouraged to build things, break things, and push boundaries — from building belief embedding models to designing real-time social data pipelines.
               </p>
               <p>
-                I like writing code that doesn&apos;t break (too often), building things that make users go "whoa," and occasionally pretending I understand how Kubernetes actually works.
+                I like writing code that doesn&apos;t break (too often), building things that make users go &ldquo;whoa,&rdquo; and occasionally pretending I understand how Kubernetes actually works.
               </p>
             </div>
           </div>
