@@ -111,19 +111,11 @@ const cardVariants = {
   animate: { 
     opacity: 1, 
     y: 0, 
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: [0.25, 0.1, 0.25, 1]
-    }
+    scale: 1
   },
   whileHover: {
     y: -5,
-    scale: 1.02,
-    transition: {
-      duration: 0.2,
-      ease: [0.42, 0, 0.58, 1]
-    }
+    scale: 1.02
   }
 };
 
@@ -131,11 +123,7 @@ const statsVariants = {
   initial: { opacity: 0, scale: 0.8 },
   animate: { 
     opacity: 1, 
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1]
-    }
+    scale: 1
   }
 };
 
@@ -189,6 +177,7 @@ export default function Experience() {
                 initial="initial"
                 whileInView="animate"
                 whileHover="whileHover"
+                transition={{ duration: 0.5 }}
                 viewport={{ once: true, margin: "-100px" }}
                 custom={index}
               >
@@ -304,6 +293,7 @@ export default function Experience() {
             <motion.div 
               className="text-center space-y-2"
               variants={statsVariants}
+              transition={{ duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
             >
               <motion.div 
@@ -338,6 +328,7 @@ export default function Experience() {
             <motion.div 
               className="text-center space-y-2"
               variants={statsVariants}
+              transition={{ duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
             >
               <motion.div 
@@ -355,6 +346,7 @@ export default function Experience() {
             <motion.div 
               className="text-center space-y-2"
               variants={statsVariants}
+              transition={{ duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
             >
               <motion.div 

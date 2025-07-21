@@ -22,11 +22,7 @@ const cardVariants = {
   initial: { opacity: 0, y: 30 },
   animate: { 
     opacity: 1, 
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.25, 0.1, 0.25, 1]
-    }
+    y: 0
   }
 };
 
@@ -114,6 +110,7 @@ export default function About() {
             <motion.div 
               className="bg-card border border-border rounded-lg p-6"
               variants={cardVariants}
+              transition={{ duration: 0.5 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
@@ -148,6 +145,7 @@ export default function About() {
             <motion.div 
               className="bg-card border border-border rounded-lg p-6"
               variants={cardVariants}
+              transition={{ duration: 0.5 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
@@ -182,6 +180,7 @@ export default function About() {
             <motion.div 
               className="bg-card border border-border rounded-lg p-6 md:col-span-2 lg:col-span-1"
               variants={cardVariants}
+              transition={{ duration: 0.5 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
