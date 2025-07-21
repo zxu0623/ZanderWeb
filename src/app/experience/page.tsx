@@ -103,7 +103,7 @@ export default function Experience() {
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block"></div>
 
           <div className="space-y-12">
-            {experiences.map((experience, index) => (
+            {experiences.map((experience) => (
               <div key={experience.id} className="relative">
                 {/* Timeline dot */}
                 <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block"></div>

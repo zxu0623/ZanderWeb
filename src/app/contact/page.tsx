@@ -29,7 +29,7 @@ export default function Contact() {
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus('success');
       setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -51,7 +51,7 @@ export default function Contact() {
       name: "LinkedIn",
       href: "https://linkedin.com/in/username",
       icon: Linkedin,
-      description: "Let's connect professionally",
+      description: "Let&apos;s connect professionally",
       color: "hover:text-blue-600"
     },
     {
@@ -97,11 +97,11 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
-            Let's Connect
+            Let&apos;s Connect
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            I'm always interested in new opportunities, collaborations, and interesting conversations. 
-            Let's build something amazing together.
+            I&apos;m always interested in new opportunities, collaborations, and interesting conversations. 
+            Let&apos;s build something amazing together.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export default function Contact() {
               <h2 className="text-2xl font-semibold text-foreground mb-6">Get In Touch</h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Whether you have a project in mind, want to discuss opportunities, or just want to say hello, 
-                I'd love to hear from you. I typically respond within 24 hours.
+                I&apos;d love to hear from you. I typically respond within 24 hours.
               </p>
             </div>
 
@@ -222,7 +222,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                  placeholder="What's this about?"
+                  placeholder="What&apos;s this about?"
                 />
               </div>
 
@@ -264,7 +264,7 @@ export default function Contact() {
               {submitStatus === 'success' && (
                 <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
                   <p className="text-green-700 dark:text-green-400 text-sm">
-                    Thanks for your message! I'll get back to you soon.
+                    Thanks for your message! I&apos;ll get back to you soon.
                   </p>
                 </div>
               )}
@@ -288,7 +288,7 @@ export default function Contact() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="space-y-4">
-              <h3 className="font-medium text-foreground">What's your typical response time?</h3>
+              <h3 className="font-medium text-foreground">What&apos;s your typical response time?</h3>
               <p className="text-muted-foreground text-sm">
                 I usually respond to messages within 24 hours during business days. 
                 For urgent matters, feel free to mention it in your message.
@@ -298,7 +298,7 @@ export default function Contact() {
             <div className="space-y-4">
               <h3 className="font-medium text-foreground">Do you work on freelance projects?</h3>
               <p className="text-muted-foreground text-sm">
-                Yes! I'm open to freelance opportunities, especially for interesting projects 
+                Yes! I&apos;m open to freelance opportunities, especially for interesting projects 
                 that align with my skills and interests.
               </p>
             </div>
@@ -314,7 +314,7 @@ export default function Contact() {
             <div className="space-y-4">
               <h3 className="font-medium text-foreground">Are you available for full-time roles?</h3>
               <p className="text-muted-foreground text-sm">
-                I'm always open to discussing interesting full-time opportunities. 
+                I&apos;m always open to discussing interesting full-time opportunities. 
                 Feel free to reach out with details about the role.
               </p>
             </div>

@@ -25,7 +25,7 @@ export default function About() {
                 about how websites work evolved into a deep fascination with the entire software development lifecycle.
               </p>
               <p>
-                Over the years, I've had the opportunity to work on diverse projects ranging from small business 
+                Over the years, I&apos;ve had the opportunity to work on diverse projects ranging from small business 
                 websites to large-scale enterprise applications. Each project has taught me valuable lessons about 
                 code quality, user experience, and the importance of understanding business requirements.
               </p>
@@ -162,8 +162,8 @@ export default function About() {
             <h2 className="text-2xl font-semibold text-foreground mb-6">Beyond Coding</h2>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
               <p>
-                When I'm not coding, you can find me exploring new coffee shops, reading tech blogs, or 
-                contributing to open source projects. I'm also passionate about mentoring aspiring developers 
+                When I&apos;m not coding, you can find me exploring new coffee shops, reading tech blogs, or 
+                contributing to open source projects. I&apos;m also passionate about mentoring aspiring developers 
                 and sharing knowledge through technical writing and speaking at local meetups.
               </p>
               <p>

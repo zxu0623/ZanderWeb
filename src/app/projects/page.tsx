@@ -283,8 +283,8 @@ export default function Projects() {
               Interested in working together?
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities and interesting projects. 
-              Let's connect and see how we can create something amazing together.
+              I&apos;m always open to discussing new opportunities and interesting projects. 
+              Let&apos;s connect and see how we can create something amazing together.
             </p>
             <Link
               href="/contact"

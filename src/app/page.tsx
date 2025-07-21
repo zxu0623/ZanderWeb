@@ -13,7 +13,7 @@ export default function Home() {
             {/* Greeting */}
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span className="text-muted-foreground">Hi, I'm </span>
+                <span className="text-muted-foreground">Hi, I&apos;m </span>
                 <span className="bg-gradient-to-r from-primary via-primary to-muted-foreground bg-clip-text text-transparent">
                   Zander
                 </span>
@@ -103,9 +103,9 @@ export default function Home() {
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              I'm a passionate full-stack developer with expertise in modern web technologies. 
+              I&apos;m a passionate full-stack developer with expertise in modern web technologies. 
               I love solving complex problems and building applications that provide exceptional 
-              user experiences. When I'm not coding, you can find me exploring new technologies, 
+              user experiences. When I&apos;m not coding, you can find me exploring new technologies, 
               contributing to open source projects, or sharing knowledge with the developer community.
             </p>
 
