@@ -60,6 +60,15 @@ export function Navigation() {
               </Link>
             ))}
             
+            {/* Resume Download */}
+            <a
+              href="/ZanderXu_resume_sde.pdf"
+              download="ZanderXu_Resume_SDE.pdf"
+              className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+            >
+              Resume
+            </a>
+            
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -107,6 +116,16 @@ export function Navigation() {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Resume Download - Mobile */}
+              <a
+                href="/ZanderXu_resume_sde.pdf"
+                download="ZanderXu_Resume_SDE.pdf"
+                onClick={() => setIsOpen(false)}
+                className="block mx-3 my-2 px-4 py-2 bg-primary text-primary-foreground text-base font-medium rounded-md hover:bg-primary/90 transition-colors text-center"
+              >
+                Download My Resume
+              </a>
             </div>
           </div>
         )}

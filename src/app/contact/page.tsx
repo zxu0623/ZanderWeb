@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { Mail, Github, Linkedin, MapPin, Phone, Send, MessageSquare } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, Phone, Send, MessageSquare, FileText, Download } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -158,6 +158,31 @@ export default function Contact() {
                     </div>
                   </a>
                 ))}
+              </div>
+              
+              {/* Resume Download */}
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <FileText size={20} className="text-primary" />
+                  Professional Resume
+                </h3>
+                <a
+                  href="/ZanderXu_resume_sde.pdf"
+                  download="ZanderXu_Resume_SDE.pdf"
+                  className="group p-4 bg-card border border-border rounded-lg hover:shadow-md transition-all duration-200 block"
+                >
+                  <div className="flex items-center gap-3">
+                    <Download size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                    <div>
+                      <div className="font-medium text-foreground group-hover:text-primary transition-colors">
+                        Download My Resume
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Complete professional background & experience
+                      </div>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

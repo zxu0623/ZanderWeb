@@ -47,6 +47,14 @@ export default function Home() {
                 >
                   Get In Touch
                 </Link>
+                
+                <a
+                  href="/ZanderXu_resume_sde.pdf"
+                  download="ZanderXu_Resume_SDE.pdf"
+                  className="px-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/80 transition-all duration-200"
+                >
+                  View My Resume
+                </a>
               </div>
 
               {/* Social Links */}

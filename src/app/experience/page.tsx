@@ -1,116 +1,209 @@
+"use client";
+
 import { Calendar, MapPin, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 
 const experiences = [
   {
     id: 1,
-    title: "Senior Full Stack Developer",
-    company: "TechCorp Inc.",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
+    title: "Software Engineer",
+    company: "Intuit",
+    location: "Mountain View, CA",
+    period: "Jan 2024 - Present",
     type: "Full-time",
+    team: "QuickBooks Fintech Money Payments Team",
     description: [
-      "Led development of microservices architecture serving 1M+ daily active users",
-      "Mentored junior developers and conducted technical interviews",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
-      "Architected and built real-time notification system using WebSockets"
+      "Lead a Kafka-to-S3 reconciliation pipeline handling 1B+ events/day with AWS Lambda, powering fraud models with <5-min SLA.",
+      "Built an LLM-powered Payments Agent microservice (Python + FastAPI + RAG) projected to generate $1M+ ARR.",
+      "Engineered user state tracking via Kafka & Java to support churn prediction, reducing drop-off by 12%.",
+      "Developed a React-based one-click onboarding flow, lifting Instant Deposit adoption by 55%.",
+      "Built E2E test suite with Playwright and React Testing Library to ensure frontend reliability.",
+      "Enforced role-based access with OPA (Rego), boosting SMB customer engagement.",
+      "Integrated Amplitude tracking for user behavior and product analytics."
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "Kubernetes"],
+    technologies: ["React", "Python", "FastAPI", "Kafka", "AWS Lambda", "S3", "Java", "Playwright", "OPA", "Rego", "Amplitude"],
     achievements: [
-      "Improved application performance by 40% through optimization",
-      "Led team of 5 developers on major product redesign",
-      "Implemented automated testing reducing bugs by 50%"
+      "Handling 1B+ events/day with <5-min SLA",
+      "Built microservice projected for $1M+ ARR",
+      "Reduced user drop-off by 12%",
+      "Increased Instant Deposit adoption by 55%"
     ]
   },
   {
     id: 2,
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
-    location: "Austin, TX",
-    period: "2020 - 2022",
-    type: "Full-time",
+    title: "Software Engineer Intern",
+    company: "Intuit",
+    location: "Mountain View, CA",
+    period: "May 2023 - Aug 2023",
+    type: "Internship",
+    team: "",
     description: [
-      "Built and maintained customer-facing web applications",
-      "Collaborated with product team to define technical requirements",
-      "Developed RESTful APIs and integrated with third-party services",
-      "Participated in agile development process and sprint planning"
+      "Developed a React-based deposit list and tracker with filtering & download, improving satisfaction.",
+      "Built backend APIs using Spring Boot to manage deposit statuses, reducing operational issues."
     ],
-    technologies: ["Vue.js", "Express.js", "MongoDB", "Redis", "Stripe API"],
+    technologies: ["React", "Spring Boot", "Java"],
     achievements: [
-      "Delivered 15+ features on time and within budget",
-      "Reduced customer onboarding time by 30%",
-      "Implemented payment processing system"
+      "Improved customer satisfaction with deposit tracking",
+      "Reduced operational issues through better API design"
     ]
   },
   {
     id: 3,
-    title: "Frontend Developer",
-    company: "Digital Agency Pro",
+    title: "Software Engineer Intern",
+    company: "Amazon",
     location: "Remote",
-    period: "2019 - 2020",
-    type: "Contract",
+    period: "Feb 2022 - Aug 2022",
+    type: "Internship",
+    team: "Customer Search & Recommendation",
     description: [
-      "Developed responsive websites for various clients",
-      "Collaborated with designers to implement pixel-perfect UIs",
-      "Optimized websites for performance and SEO",
-      "Maintained and updated existing client websites"
+      "Built an offline eval framework (Java, JUnit) to test search ranking models over 200M queries.",
+      "Prototyped new engagement features with clickstream signals, improving nDCG@10 by 5%.",
+      "Refactored debugging tools using Java & Kata, improving modularity and team debug efficiency by 20%."
     ],
-    technologies: ["JavaScript", "React", "Sass", "Webpack", "WordPress"],
+    technologies: ["Java", "JUnit", "Kata"],
     achievements: [
-      "Completed 20+ client projects with 100% satisfaction rate",
-      "Improved client website speed scores by average of 35%",
-      "Developed reusable component library"
+      "Tested models over 200M queries",
+      "Improved nDCG@10 by 5%",
+      "Increased debug efficiency by 20%"
     ]
   },
   {
     id: 4,
-    title: "Junior Web Developer",
-    company: "Local Web Solutions",
-    location: "Austin, TX",
-    period: "2018 - 2019",
-    type: "Full-time",
+    title: "ML Engineer",
+    company: "University of Illinois Urbana-Champaign",
+    location: "Urbana, IL",
+    period: "Aug 2022 - Dec 2023",
+    type: "Research",
+    team: "",
     description: [
-      "Assisted in development of client websites and web applications",
-      "Fixed bugs and implemented small features",
-      "Learned modern web development practices and tools",
-      "Participated in code reviews and team meetings"
+      "Led MLOps pipeline development with MLflow, Docker, and Kubernetes to streamline model iteration.",
+      "Co-developed a BERT + VGAE belief embedding model, boosting accuracy by 18%.",
+      "Built scalable scrapers with Selenium + Redis for social media data (100K+ records).",
+      "Developed React-based visualization dashboard for 2D/3D influence graphs."
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "PHP", "MySQL"],
+    technologies: ["Python", "MLflow", "Docker", "Kubernetes", "BERT", "VGAE", "Selenium", "Redis", "React"],
     achievements: [
-      "Successfully completed internship to full-time conversion",
-      "Contributed to 10+ client projects",
-      "Gained proficiency in full-stack development"
+      "Streamlined model iteration with MLOps pipeline",
+      "Boosted model accuracy by 18%",
+      "Collected 100K+ social media records",
+      "Built visualization dashboard for influence graphs"
     ]
   }
 ];
+
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const cardVariants = {
+  initial: { opacity: 0, y: 50, scale: 0.95 },
+  animate: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  },
+  whileHover: {
+    y: -5,
+    scale: 1.02,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut"
+    }
+  }
+};
+
+const statsVariants = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { 
+    opacity: 1, 
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
 
 export default function Experience() {
   return (
     <div className="min-h-screen py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center space-y-6 mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
+        <motion.div 
+          className="text-center space-y-6 mb-16"
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+        >
+          <motion.h1 
+            className="text-4xl sm:text-5xl font-bold text-foreground"
+            variants={fadeInUp}
+          >
             Experience
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            My professional journey as a software developer, building solutions and growing with amazing teams.
-          </p>
-        </div>
+          </motion.h1>
+          <motion.p 
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+            variants={fadeInUp}
+          >
+            My professional journey in software engineering and machine learning, building scalable systems and innovative solutions at top tech companies.
+          </motion.p>
+        </motion.div>
 
         {/* Timeline */}
-        <div className="relative">
+        <motion.div 
+          className="relative"
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+        >
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block"></div>
+          <motion.div 
+            className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block"
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            style={{ originY: 0 }}
+          ></motion.div>
 
           <div className="space-y-12">
-            {experiences.map((experience) => (
-              <div key={experience.id} className="relative">
+            {experiences.map((experience, index) => (
+              <motion.div 
+                key={experience.id} 
+                className="relative"
+                variants={cardVariants}
+                initial="initial"
+                whileInView="animate"
+                whileHover="whileHover"
+                viewport={{ once: true, margin: "-100px" }}
+                custom={index}
+              >
                 {/* Timeline dot */}
-                <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block"></div>
+                <motion.div 
+                  className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: index * 0.1 + 0.2, duration: 0.3 }}
+                  viewport={{ once: true }}
+                ></motion.div>
 
                 {/* Content */}
                 <div className="md:ml-16">
-                  <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all duration-200">
+                  <motion.div className="bg-card border border-border rounded-lg p-6 shadow-sm">
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                       <div>
@@ -121,6 +214,11 @@ export default function Experience() {
                           <span>{experience.company}</span>
                           <ExternalLink size={16} />
                         </div>
+                        {experience.team && (
+                          <div className="text-sm text-muted-foreground mt-1">
+                            {experience.team}
+                          </div>
+                        )}
                       </div>
                       
                       <div className="flex flex-col sm:items-end gap-1 text-sm text-muted-foreground">
@@ -180,54 +278,145 @@ export default function Experience() {
                         </ul>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Summary Stats */}
-        <div className="mt-16 pt-16 border-t border-border">
-          <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">Career Highlights</h2>
+        <motion.div 
+          className="mt-16 pt-16 border-t border-border"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          <motion.h2 
+            className="text-2xl font-semibold text-foreground mb-8 text-center"
+            variants={fadeInUp}
+          >
+            Career Highlights
+          </motion.h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">5+</div>
+            <motion.div 
+              className="text-center space-y-2"
+              variants={statsVariants}
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.div 
+                className="text-3xl font-bold text-primary"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
+                viewport={{ once: true }}
+              >
+                3+
+              </motion.div>
               <div className="text-sm text-muted-foreground">Years Experience</div>
-            </div>
+            </motion.div>
             
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">50+</div>
-              <div className="text-sm text-muted-foreground">Projects Delivered</div>
-            </div>
+            <motion.div 
+              className="text-center space-y-2"
+              variants={statsVariants}
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.div 
+                className="text-3xl font-bold text-primary"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
+                viewport={{ once: true }}
+              >
+                1B+
+              </motion.div>
+              <div className="text-sm text-muted-foreground">Events Processed/Day</div>
+            </motion.div>
             
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">15+</div>
+            <motion.div 
+              className="text-center space-y-2"
+              variants={statsVariants}
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.div 
+                className="text-3xl font-bold text-primary"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6, duration: 0.5, type: "spring" }}
+                viewport={{ once: true }}
+              >
+                20+
+              </motion.div>
               <div className="text-sm text-muted-foreground">Technologies</div>
-            </div>
+            </motion.div>
             
-            <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">4</div>
-              <div className="text-sm text-muted-foreground">Companies</div>
-            </div>
+            <motion.div 
+              className="text-center space-y-2"
+              variants={statsVariants}
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.div 
+                className="text-3xl font-bold text-primary"
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
+                viewport={{ once: true }}
+              >
+                3
+              </motion.div>
+              <div className="text-sm text-muted-foreground">Major Companies</div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Download Resume CTA */}
-        <div className="mt-16 text-center">
-          <div className="bg-muted/20 rounded-lg p-8">
-            <h3 className="text-xl font-semibold text-foreground mb-4">
-              Want to know more?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Download my resume for a comprehensive overview of my experience and skills.
-            </p>
-            <button className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-200">
-              Download Resume
-            </button>
-          </div>
-        </div>
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className="bg-muted/20 rounded-lg p-8"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.h3 
+              className="text-xl font-semibold text-foreground mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Interested in working together?
+            </motion.h3>
+            <motion.p 
+              className="text-muted-foreground mb-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Get my complete professional background including technical achievements, key projects, and measurable impact across leading tech companies.
+            </motion.p>
+            <motion.a
+              href="/ZanderXu_resume_sde.pdf"
+              download="ZanderXu_Resume_SDE.pdf"
+              className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-200"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ delay: 0.6, duration: 0.3 }}
+              viewport={{ once: true }}
+            >
+              Download My Resume
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
