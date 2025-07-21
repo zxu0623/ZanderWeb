@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Github, Linkedin, MapPin, Phone, Send, MessageSquare, FileText, Download } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -20,16 +21,48 @@ export default function Contact() {
     }));
   };
 
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    emailjs.init("Ul6dsAwjkZfnyBl65");
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic form validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 3000);
+      return;
+    }
+
     setIsSubmitting(true);
     
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await emailjs.send(
+        "service_859ya2e", // Email service ID
+        "template_287y2pz", // Email template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "zanderxu.uiuc2023@gmail.com", // Your email address
+        }
+      );
+      
       setSubmitStatus('success');
       setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch {
+    } catch (error) {
+      console.error('Error sending email:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -259,6 +292,18 @@ export default function Contact() {
                   placeholder="Tell me more about your project or inquiry..."
                 />
               </div>
+
+              {submitStatus === 'error' && (
+                <div className="text-red-500 text-sm mb-4">
+                  Failed to send message. Please check your inputs and try again.
+                </div>
+              )}
+              
+              {submitStatus === 'success' && (
+                <div className="text-green-500 text-sm mb-4">
+                  Message sent successfully! I&apos;ll get back to you soon.
+                </div>
+              )}
 
               <button
                 type="submit"
