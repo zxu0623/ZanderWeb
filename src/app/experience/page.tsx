@@ -114,7 +114,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut"
+      ease: [0.25, 0.1, 0.25, 1]
     }
   },
   whileHover: {
@@ -122,7 +122,7 @@ const cardVariants = {
     scale: 1.02,
     transition: {
       duration: 0.2,
-      ease: "easeInOut"
+      ease: [0.42, 0, 0.58, 1]
     }
   }
 };
@@ -134,7 +134,7 @@ const statsVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: "easeOut"
+      ease: [0.25, 0.1, 0.25, 1]
     }
   }
 };
@@ -176,7 +176,7 @@ export default function Experience() {
             className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block"
             initial={{ scaleY: 0 }}
             animate={{ scaleY: 1 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: [0.42, 0, 0.58, 1] }}
             style={{ originY: 0 }}
           ></motion.div>
 
@@ -376,7 +376,7 @@ export default function Experience() {
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
         >
           <motion.div 

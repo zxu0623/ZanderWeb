@@ -25,7 +25,7 @@ const cardVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut"
+      ease: [0.25, 0.1, 0.25, 1]
     }
   }
 };
