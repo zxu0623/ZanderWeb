@@ -11,82 +11,82 @@ const experiences = [
     location: "Mountain View, CA",
     period: "Jan 2024 - Present",
     type: "Full-time",
-    team: "QuickBooks Fintech Money Payments Team",
+    team: "Fintech Payments Team",
     description: [
-      "Lead a Kafka-to-S3 reconciliation pipeline handling 1B+ events/day with AWS Lambda, powering fraud models with <5-min SLA.",
-      "Built an LLM-powered Payments Agent microservice (Python + FastAPI + RAG) projected to generate $1M+ ARR.",
-      "Engineered user state tracking via Kafka & Java to support churn prediction, reducing drop-off by 12%.",
-      "Developed a React-based one-click onboarding flow, lifting Instant Deposit adoption by 55%.",
-      "Built E2E test suite with Playwright and React Testing Library to ensure frontend reliability.",
-      "Enforced role-based access with OPA (Rego), boosting SMB customer engagement.",
-      "Integrated Amplitude tracking for user behavior and product analytics."
+      "Architected a distributed reconciliation system to process 2M+ daily financial transactions, utilizing Kafka with custom key-based partitioning to ensure sequential processing by merchant.",
+      "Engineered fault-tolerant data ingestion with idempotent AWS Lambda consumers, implementing exponential backoff retries and a Dead-Letter Queue (DLQ) for robust poison message handling.",
+      "Optimized data storage and analytics using S3 Parquet columnar format with date-hour partitioning, reducing analytical query latency from 45s to 2s and enabling real-time financial reporting across multiple data centers.",
+      "Designed enterprise RBAC system using OPA/Rego for microservices authorization, implementing 200+ permission policies across 15 services with centralized distribution via Redis cache and auto validation pipeline, reducing authorization latency from 50ms to 5ms.",
+      "Built end-to-end Payment AI Agent using LLM APIs with React/TypeScript frontend and Python FastAPI backend, implementing real-time screenshot analysis, contextual invoice generation with validation pipelines, and A/B testing framework via Amplitude.",
+      "Optimized high-traffic payment UI architecture using React virtualization with react-window, implementing progressive loading for 100K+ transaction records, lazy component hydration, and comprehensive E2E testing via Playwright reducing page load time by 60%."
     ],
-    technologies: ["React", "Python", "FastAPI", "Kafka", "AWS Lambda", "S3", "Java", "Playwright", "OPA", "Rego", "Amplitude"],
+    technologies: ["React", "TypeScript", "Python", "FastAPI", "Kafka", "AWS Lambda", "S3", "Parquet", "OPA", "Rego", "Redis", "Playwright", "Amplitude", "react-window"],
     achievements: [
-      "Handling 1B+ events/day with <5-min SLA",
-      "Built microservice projected for $1M+ ARR",
-      "Reduced user drop-off by 12%",
-      "Increased Instant Deposit adoption by 55%"
+      "Processing 2M+ daily financial transactions",
+      "Reduced query latency from 45s to 2s",
+      "Reduced authorization latency from 50ms to 5ms",
+      "Reduced page load time by 60%"
     ]
   },
   {
     id: 2,
-    title: "Software Engineer Intern",
-    company: "Intuit",
-    location: "Mountain View, CA",
-    period: "May 2023 - Aug 2023",
-    type: "Internship",
-    team: "",
-    description: [
-      "Developed a React-based deposit list and tracker with filtering & download, improving satisfaction.",
-      "Built backend APIs using Spring Boot to manage deposit statuses, reducing operational issues."
-    ],
-    technologies: ["React", "Spring Boot", "Java"],
-    achievements: [
-      "Improved customer satisfaction with deposit tracking",
-      "Reduced operational issues through better API design"
-    ]
-  },
-  {
-    id: 3,
-    title: "Software Engineer Intern",
-    company: "Amazon",
-    location: "Remote",
-    period: "Feb 2022 - Aug 2022",
-    type: "Internship",
-    team: "Customer Search & Recommendation",
-    description: [
-      "Built an offline eval framework (Java, JUnit) to test search ranking models over 200M queries.",
-      "Prototyped new engagement features with clickstream signals, improving nDCG@10 by 5%.",
-      "Refactored debugging tools using Java & Kata, improving modularity and team debug efficiency by 20%."
-    ],
-    technologies: ["Java", "JUnit", "Kata"],
-    achievements: [
-      "Tested models over 200M queries",
-      "Improved nDCG@10 by 5%",
-      "Increased debug efficiency by 20%"
-    ]
-  },
-  {
-    id: 4,
-    title: "ML Engineer",
+    title: "Research Assistant (Software Development)",
     company: "University of Illinois Urbana-Champaign",
     location: "Urbana, IL",
     period: "Aug 2022 - Dec 2023",
     type: "Research",
-    team: "",
+    team: "INCAS/MIPS Data Platform Development",
     description: [
-      "Led MLOps pipeline development with MLflow, Docker, and Kubernetes to streamline model iteration.",
-      "Co-developed a BERT + VGAE belief embedding model, boosting accuracy by 18%.",
-      "Built scalable scrapers with Selenium + Redis for social media data (100K+ records).",
-      "Developed React-based visualization dashboard for 2D/3D influence graphs."
+      "Led development of a large-scale social media intelligence platform to identify and track misinformation campaigns, processing 100K+ daily records using Selenium/Python, Redis, and Docker ML orchestration.",
+      "Pioneered novel Belief Embedding Model integrating BERT, VGAE, and Segment Trees for misinformation detection, achieving breakthrough performance on social network analysis benchmarks.",
+      "Built React-based analytics platform with 3D/2D network visualizations serving 50+ researchers, implementing automated evaluation frameworks and enabling 15+ published papers across multiple institutions.",
+      "Designed production-grade ML infrastructure with continuous retraining, A/B testing, and real-time classification workflows, supporting research collaborations and cross-platform misinformation analysis."
     ],
-    technologies: ["Python", "MLflow", "Docker", "Kubernetes", "BERT", "VGAE", "Selenium", "Redis", "React"],
+    technologies: ["Python", "Selenium", "Redis", "Docker", "BERT", "VGAE", "React", "ML", "Data Analytics"],
     achievements: [
-      "Streamlined model iteration with MLOps pipeline",
-      "Boosted model accuracy by 18%",
-      "Collected 100K+ social media records",
-      "Built visualization dashboard for influence graphs"
+      "Processing 100K+ daily records",
+      "Breakthrough performance on ML benchmarks",
+      "Serving 50+ researchers",
+      "Enabled 15+ published papers"
+    ]
+  },
+  {
+    id: 3,
+    title: "Software Development Engineer Intern",
+    company: "Intuit",
+    location: "Mountain View, CA",
+    period: "May 2023 - Aug 2023",
+    type: "Internship",
+    team: "QuickBooks Money Team",
+    description: [
+      "Developed React-based deposit list and tracker with advanced data filtering, sorting, and CSV download functionality using MySQL backend, processing 5K+ daily deposit records and improving user satisfaction scores by 15%.",
+      "Implemented deposit management feature using Spring Boot with RESTful APIs for status updates, added input validation and auto email notifications for status changes, reducing failure rates by 25% and improving search performance through database indexing."
+    ],
+    technologies: ["React", "Spring Boot", "Java", "MySQL", "RESTful APIs"],
+    achievements: [
+      "Processing 5K+ daily deposit records",
+      "Improved user satisfaction by 15%",
+      "Reduced failure rates by 25%"
+    ]
+  },
+  {
+    id: 4,
+    title: "Software Development Engineer Intern",
+    company: "Amazon",
+    location: "Remote",
+    period: "Feb 2022 - Aug 2022",
+    type: "Internship",
+    team: "Customer Search Recommendations Team",
+    description: [
+      "Implemented Redis caching layer for product catalog queries to reduce DynamoDB load from 8K+ QPS, using TTL-based expiration and achieving 92% cache hit ratio, reducing search latency from 300ms to 80ms.",
+      "Built cache invalidation system using DynamoDB Streams and Java to automatically evict stale product data when catalog updates occur, maintaining cache consistency across frequent product changes.",
+      "Developed CloudWatch monitoring dashboard to track cache performance metrics and automated alerts for cache degradation, improving incident response efficiency."
+    ],
+    technologies: ["Redis", "DynamoDB", "Java", "CloudWatch", "AWS"],
+    achievements: [
+      "Reduced DynamoDB load from 8K+ QPS",
+      "Achieved 92% cache hit ratio",
+      "Reduced search latency from 300ms to 80ms"
     ]
   }
 ];
@@ -320,9 +320,9 @@ export default function Experience() {
                 transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
                 viewport={{ once: true }}
               >
-                1B+
+                2M+
               </motion.div>
-              <div className="text-sm text-muted-foreground">Events Processed/Day</div>
+              <div className="text-sm text-muted-foreground">Transactions/Day</div>
             </motion.div>
             
             <motion.div 

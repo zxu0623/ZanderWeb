@@ -55,7 +55,7 @@ export default function Contact() {
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: "zanderxu.uiuc2023@gmail.com", // Your email address
+          to_email: "zanderxu.uiucsde2025@gmail.com", // Your email address
         }
       );
       
@@ -89,7 +89,7 @@ export default function Contact() {
     },
     {
       name: "Email",
-      href: "mailto:zanderxu.uiuc2023@gmail.com",
+      href: "mailto:zanderxu.uiucsde2025@gmail.com",
       icon: Mail,
       description: "Send me a direct message",
       color: "hover:text-red-500"
@@ -100,14 +100,14 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "zanderxu.uiuc2023@gmail.com",
-      href: "mailto:zanderxu.uiuc2023@gmail.com"
+      value: "zanderxu.uiucsde2025@gmail.com",
+      href: "mailto:zanderxu.uiucsde2025@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (217) 417-5065",
-      href: "tel:+12174175065"
+      value: "(510) 279-6817",
+      href: "tel:+15102796817"
     },
     {
       icon: MapPin,

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Linkedin } from "lucide-react";
 
 // TODO: Set showProjects to true when projects section is ready
 const showProjects = false;
@@ -54,15 +54,6 @@ export default function Home() {
 
               {/* Social Links */}
               <div className="flex justify-center space-x-6 pt-4">
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 text-muted-foreground hover:text-primary hover:bg-accent rounded-lg transition-all duration-200"
-                  aria-label="GitHub"
-                >
-                  <Github size={24} />
-                </a>
                               <a
                 href="https://www.linkedin.com/in/zander-xinhe-xu-96a1ab174/"
                 target="_blank"
@@ -71,13 +62,6 @@ export default function Home() {
                 aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
-              </a>
-                              <a
-                href="mailto:zanderxu.uiuc2023@gmail.com"
-                className="p-3 text-muted-foreground hover:text-primary hover:bg-accent rounded-lg transition-all duration-200"
-                aria-label="Email"
-              >
-                <Mail size={24} />
               </a>
               </div>
             </div>
