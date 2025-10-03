@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import { Mail, Github, Linkedin, MapPin, Phone, Send, MessageSquare, FileText, Download } from "lucide-react";
+import { Mail, Linkedin, MapPin, Phone, Send, MessageSquare, FileText, Download } from "lucide-react";
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
@@ -74,25 +74,11 @@ export default function Contact() {
 
   const socialLinks = [
     {
-      name: "GitHub",
-      href: "https://github.com/username",
-      icon: Github,
-      description: "Check out my code and contributions",
-      color: "hover:text-gray-900 dark:hover:text-gray-100"
-    },
-    {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/zander-xinhe-xu-96a1ab174/",
       icon: Linkedin,
       description: "Let&apos;s connect professionally",
       color: "hover:text-blue-600"
-    },
-    {
-      name: "Email",
-      href: "mailto:zanderxu.uiucsde2025@gmail.com",
-      icon: Mail,
-      description: "Send me a direct message",
-      color: "hover:text-red-500"
     }
   ];
 
